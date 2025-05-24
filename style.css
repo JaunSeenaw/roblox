@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    background: #f2f4f5;
+    color: #393b3d;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 3.3em;
+}
+* {margin: 0; padding: 0; box-sizing: border-box;}
+a {color: #393b3d; text-decoration: none; font-weight: 500;}
+a:hover {text-decoration: underline; color: #393b3d;}
+input, textarea, button {color: #393b3d;}
+#menu {
+    font-weight: 400;
+    background: #dee1e3;
+    width: 100%;
+    border: solid #c7cbce;
+    border-width: 0 0 1px;
+    height: 2.6em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+#menu .links-header-s {
+    display: grid;
+    grid-template-columns: 25px 25% 30% 20% 25%;
+    height: 2.6em;
+    align-items: center;
+}
+#menu .links-header-s .area-seca .roblox-icon {width: 25px; height: 25px; z-index: 99;}
+#menu .links-header-s .area-sec {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid rgba(0,0,0,.0);
+}
+#menu .links-header-s .area-sec:hover {
+    border-bottom: 2px solid #393b3d;
+}
+#menu .links-header-s .area-sec a {
+    text-decoration: none;
+    margin-top: 2px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-header-s, .more-buttons-s {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 2.6rem;
+}
+.search-header-s .form-g-my {
+    position: relative;
+}
+.search-header-s .form-g-my input {
+    padding: 2px 5px;
+    padding-left: 40px;        
+    padding-right: 40px;        
+    border: 0.5px solid #c7cbce;
+    outline: none;
+    border-radius: 8px;
+    width: 350px;
+}
+.search-header-s .form-g-my input:focus {border: 0.3px solid #999;}
+.search-header-s .form-g-my #ct-search, .search-header-s .form-g-my #ct-search-rem {
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    color: #393b3d;
+    background: none;
+    border: none;
+}
+.search-header-s .form-g-my #ct-search {left: 0;}
+.search-header-s .form-g-my #ct-search-rem {right: 0; opacity: 0; visibility: hidden;}
+.search-header-s .form-g-my #ct-search-rem.active {opacity: 1; visibility: visible;}
+
+.more-buttons-s {
+    flex-direction: row-reverse;
+}
+.more-buttons-s button, .more-buttons-s a {
+    color: #393b3d;
+    background: #fff;
+    padding: 0 9px;
+    border: 1px solid #c7cbce;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    height: calc(100% - 10px);
+    margin: 0 10px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+.more-buttons-s a {
+    background: #00b06f;
+    color: #fff;
+}
+.more-buttons-s button#search-open-dv-btn {
+    font-size: 1.4rem;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    background: none;
+}
+
+
+
+
+.panel {
+    width: 400px;
+    background: white;
+    margin: 30px auto;
+}
+.panel_dv {
+    padding: 20px;
+}
+.panel_dv div {
+    text-align: center;
+}
+.head-panel {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.head-panel h1 { 
+    font-weight: 700;
+    font-size: 35px;
+}
+.error-d {
+    font-size: 10px;
+    color: #f74b52;
+    display: flex;
+    font-weight: 500;
+    opacity: 0;
+    visibility: hidden;
+}
+.error-d.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.form-group input {
+    width: 100%;
+    padding: 5px 12px;
+    background: white;
+    border: 1px solid #c7cbce;
+    outline: none;
+    border-radius: 7px;
+    margin-top: 20px;
+}
+.form-group input::placeholder { color: #c7cbce; }
+.form-group button, .form-group a {
+    width: 100%;
+    padding: 5px 12px;
+    background-color: transparent;
+    outline: none;
+    margin: 10px 0;
+    font-weight: 500;
+    border: 1px solid #606162;
+    color: rgba(0,0,0,.6);
+    border-radius: 8px;
+}
+.more-panel { padding: 10px 0; }
+.hr-panel {
+    position: relative;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+.hr-panel span {
+    position: absolute;
+    z-index: 2;
+    background: white;
+    padding: 3px 12px;
+    font-size: 10px;
+    color: #222;
+    font-weight: 500;
+}
+.hr-panel::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: silver;
+    position: absolute;
+}
+.head-copyright {
+    width: 100%;
+    height: 60px;
+    display: grid;
+    grid-template-columns: 12% 12% 12% 12% 12% 12% 12% 12% 12%;
+    justify-content: center;
+    align-items: center;
+}
+.head-copyright li {
+    list-style: none;
+    float: right;
+    margin: 0 20px;
+    text-align: center;
+}
+.bottom-copyright {
+    font-size: 10px;
+    text-align: center;
+    font-weight: 500;
+    margin: 20px 0;
+    margin-top: 30px;
+}
+#copyright {
+    margin-top: 100px;
+}
+.search-header-s .form-g-my.active {
+    opacity: 1;
+    visibility: visible;
+    height: calc(2.8em);
+    width: 100%;
+    position: fixed;
+    top: 2.8em;
+    left: -80px;
+    background: #dee1e3;
+}
+.search-header-s .form-g-my.active .form-g_dv {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px;
+}
+.search-header-s .form-g-my.active input {
+    width: 100%;
+}
+.search-header-s .form-g-my.active #ct-search {left: 10px; top: 5px;}
+.search-header-s .form-g-my.active #ct-search-rem {right: 0; opacity: 0; visibility: hidden;}
+@media (max-width: 1174px) {
+    .search-header-s .form-g-my {
+        margin-left: 80px;
+    }
+    .search-header-s .form-g-my input {  width: 200px; }
+    #menu .links-header-s {
+        grid-template-columns: 30px 25% 35% 20% 20%;
+    }
+    .head-copyright {
+        grid-template-columns: 25% 22% 22% 22% 22% 22%;
+    }
+
+}
+@media (max-width: 990px) {
+    body {
+        margin-top: 7rem;
+        font-size: 0.8rem;
+    }
+    .more-buttons-s {
+        position: fixed;
+        top: 10px;
+    }
+    #menu {
+        height: 4.7rem;
+    }
+    .links-header-s {
+        position: absolute;
+        top: 2.6rem;
+    }
+    #menu .links-header-s .area-seca .roblox-icon {
+        position: fixed;
+        top: 10px;
+        left: 15px;
+    }
+    .search-header-s .form-g-my input {  width: 300px; }
+    #menu .links-header-s {
+        grid-template-columns: 0 25% 25% 25% 25%;
+    }
+    .more-buttons-s {
+        width: 20%;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .head-copyright li:nth-child(9) {
+        width: 200px;
+    }
+    #ct-search, #ct-search-rem {
+        margin-top: -2px;
+        font-size: 15px;
+    }
+    
+}
+@media (max-width: 720px) {
+    body {
+        
+    }
+    .search-header-s .form-g-my {
+        opacity: 0;
+        visibility: hidden;
+    }
+    .more-buttons-s a { width: 100px; }
+    .more-buttons-s { width: 40%; }
+    .more-buttons-s button#search-open-dv-btn {
+        opacity: 1;
+        visibility: visible;
+        display: flex;
+    }
+    .head-copyright {
+        grid-template-columns: 25% 15% 15% 20% 25%;
+    }
+    .head-copyright li:nth-child(9) {
+        width: 200px;
+    }
+
+    
+}
